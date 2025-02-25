@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stats - NTUA Diesels</title>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+  />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="js/stats.js" defer></script>
+</head>
+<body>
+  <header class="bg-light text-center p-3">
+    <div class="logo">
+      <img
+        src="images/ntua-diesels.png"
+        alt="NTUA Diesels Logo"
+        class="img-fluid mx-auto d-block"
+        style="max-width: 100px;"
+      />
+    </div>
+    <h1 class="text-primary my-2">NTUA DIESELS</h1>
+    <button id="darkModeToggle" class="btn btn-secondary mt-2">Dark Mode</button>
+  </header>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">NTUA Diesels</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">The Team</a></li>
+            <li class="nav-item"><a class="nav-link active" href="stats.html">The Team stats</a></li>
+            <li class="nav-item"><a class="nav-link" href="tasks.html">Tasks</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container my-5">
+    <h2 class="text-secondary text-center mb-4">Season Stats</h2>
+
+    <div class="card mb-5">
+      <div class="card-header bg-info text-white">2024-25 Season Stats</div>
+      <div class="card-body p-0">
+        <table class="table table-hover mb-0" id="seasonStatsTable">
+          <thead>
+            <tr>
+              <th>Player</th>
+              <th class="sortable" data-sort="gp">GP &#x25B2;</th>
+              <th class="sortable" data-sort="pir">PIR &#x25B2;</th>
+              <th class="sortable" data-sort="ppg">PPG &#x25B2;</th>
+              <th class="sortable" data-sort="rpg">RPG &#x25B2;</th>
+              <th class="sortable" data-sort="apg">APG &#x25B2;</th>
+              <th class="sortable" data-sort="bpg">BPG &#x25B2;</th>
+              <th class="sortable" data-sort="spg">SPG &#x25B2;</th>
+            </tr>
+          </thead>
+          <tbody id="statsTable">
+            <tr>
+              <td>Giannis Christos</td>
+              <td>8</td>
+              <td>11.2</td>
+              <td>13.8</td>
+              <td>7.5</td>
+              <td>3.1</td>
+              <td>0.6</td>
+              <td>1.2</td>
+            </tr>
+            <tr>
+              <td>Angelos Papadakis</td>
+              <td>8</td>
+              <td>3.4</td>
+              <td>12.3</td>
+              <td>5.6</td>
+              <td>4.0</td>
+              <td>0.4</td>
+              <td>1.5</td>
+            </tr>
+            <tr>
+              <td>Nikos Kotsopoulos</td>
+              <td>7</td>
+              <td>23</td>
+              <td>10.7</td>
+              <td>5.0</td>
+              <td>5.7</td>
+              <td>0.2</td>
+              <td>0.9</td>
+            </tr>
+            <tr>
+              <td>Vasilis Gekas</td>
+              <td>8</td>
+              <td>8.8</td>
+              <td>11.5</td>
+              <td>6.5</td>
+              <td>2.0</td>
+              <td>0.3</td>
+              <td>0.8</td>
+            </tr>
+            <tr>
+              <td>Tasos Michael</td>
+              <td>6</td>
+              <td>9</td>
+              <td>8.3</td>
+              <td>3.2</td>
+              <td>1.7</td>
+              <td>0.0</td>
+              <td>0.6</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <h2 class="text-secondary text-center mb-4">Individual Highs</h2>
+    <div class="mb-4 text-center">
+      <label for="highsFilter" class="form-label me-2">Show Record For:</label>
+      <select id="highsFilter" class="form-select d-inline-block w-auto">
+        <option value="">-- Select Stat --</option>
+        <option value="points">Most Points in a Game</option>
+        <option value="rebounds">Most Rebounds in a Game</option>
+        <option value="assists">Most Assists in a Game</option>
+        <option value="blocks">Most Blocks in a Game</option>
+        <option value="steals">Most Steals in a Game</option>
+        <option value="efficiency">Highest Efficiency in a Game</option>
+      </select>
+    </div>
+
+    <div id="individualHighs" class="card">
+      <div class="card-header bg-success text-white" id="highsTitle">Individual High</div>
+      <div class="card-body">
+        <p><strong>Player:</strong> <span id="highsPlayer">N/A</span></p>
+        <p><strong>Value:</strong> <span id="highsValue">N/A</span></p>
+        <p><strong>Game:</strong> <span id="highsNote">N/A</span></p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-dark text-white text-center py-3 mt-5">
+    <p class="m-0">&copy; 2024 NTUA Diesels. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
