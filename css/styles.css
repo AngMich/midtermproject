@@ -1,6 +1,6 @@
 /* loading.css */
 body {
-  transition: opacity 0.1s ease;
+  transition: opacity 0.05s ease;
   opacity: 1; 
 }
 body.loading {

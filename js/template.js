@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   const head = document.querySelector("head");
 
-  // Load jQuery if not present
   if (!window.jQuery) {
     const jqueryScript = document.createElement("script");
     jqueryScript.src = "https://code.jquery.com/jquery-3.6.0.min.js";
@@ -12,7 +11,6 @@ document.addEventListener("DOMContentLoaded", function () {
     };
     head.appendChild(jqueryScript);
   } else {
-    // jQuery is already available
     initializeCommonFeatures();
     loadPageSpecificScript();
     enableSmoothPageTransitions();
@@ -20,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function initializeCommonFeatures() {
-  // Load Bootstrap CSS if missing
   if (!document.querySelector("#bootstrap-css")) {
     const bootstrapCSS = document.createElement("link");
     bootstrapCSS.id = "bootstrap-css";
@@ -30,7 +27,6 @@ function initializeCommonFeatures() {
     document.querySelector("head").appendChild(bootstrapCSS);
   }
 
-  // Load Bootstrap JS if missing
   if (!document.querySelector("#bootstrap-js")) {
     const bootstrapJS = document.createElement("script");
     bootstrapJS.id = "bootstrap-js";
@@ -39,19 +35,8 @@ function initializeCommonFeatures() {
     document.body.appendChild(bootstrapJS);
   }
 
-  // Load your main styles if missing
-  if (!document.querySelector("#dark-mode-css")) {
-    const darkModeCSS = document.createElement("link");
-    darkModeCSS.id = "dark-mode-css";
-    darkModeCSS.rel = "stylesheet";
-    darkModeCSS.href = "styles.css";
-    document.querySelector("head").appendChild(darkModeCSS);
-  }
-
-  // Remove 'loading' class so the page fades in
   document.body.classList.remove("loading");
 
-  // Insert header if not present
   if (!document.querySelector("#header")) {
     document.body.insertAdjacentHTML(
       "afterbegin",
@@ -84,7 +69,6 @@ function initializeCommonFeatures() {
     );
   }
 
-  // Insert footer if not present
   if (!document.querySelector("#footer")) {
     document.body.insertAdjacentHTML(
       "beforeend",
@@ -98,7 +82,6 @@ function initializeCommonFeatures() {
 
   setupDarkMode();
 
-  // Highlight the current page link
   const currentPage = window.location.pathname.split("/").pop();
   document.querySelectorAll(".navbar-nav .nav-link").forEach((link) => {
     link.classList.toggle(
@@ -113,7 +96,6 @@ function setupDarkMode() {
   const isDarkMode = localStorage.getItem("darkMode") === "enabled";
   applyDarkMode(isDarkMode);
 
-  // Toggle Dark Mode on button click
   document.body.addEventListener("click", function (event) {
     if (event.target.id === "darkModeToggle") {
       const newDarkMode = !document.body.classList.contains("dark-mode");
@@ -130,7 +112,6 @@ function applyDarkMode(enable) {
   document.querySelector("nav").classList.toggle("dark-mode", enable);
 }
 
-// Intercepts internal links to fade out before navigation
 function enableSmoothPageTransitions() {
   const allLinks = document.querySelectorAll("a[href]");
 
@@ -138,18 +119,14 @@ function enableSmoothPageTransitions() {
     link.addEventListener("click", (e) => {
       const href = link.getAttribute("href") || "";
 
-      // Consider anything starting with "http", "#", or empty as external or anchor
       const isExternal =
         href.startsWith("http") || href.startsWith("#") || href === "";
 
       if (!isExternal) {
-        // Prevent immediate navigation
         e.preventDefault();
 
-        // Fade out by adding .loading
         document.body.classList.add("loading");
 
-        // Navigate once the fade-out transition finishes
         document.body.addEventListener("transitionend", function handleEnd() {
           document.body.removeEventListener("transitionend", handleEnd);
           window.location.href = href;
@@ -159,7 +136,6 @@ function enableSmoothPageTransitions() {
   });
 }
 
-// Loads page-specific scripts
 function loadPageSpecificScript() {
   if (window.location.pathname.endsWith("stats.html")) {
     const statsScript = document.createElement("script");
