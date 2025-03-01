@@ -4,47 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Tasks - NTUA Diesels</title>
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-  />
+  <script src="js/template.js" defer></script>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
-  <header class="text-center p-3 text-info">
-    <div class="logo">
-      <img
-        src="images/ntua-diesels.png"
-        alt="NTUA Diesels Logo"
-        class="img-fluid mx-auto d-block"
-        style="max-width: 100px;"
-      />
-    </div>
-    <h1 class="text-primary">NTUA DIESELS</h1>
-    <button id="darkModeToggle" class="btn bg-secondary text-white mt-2">Dark Mode</button>
-  </header>
+<body class="loading">
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">NTUA Diesels</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNav"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">The Team</a></li>
-          <li class="nav-item"><a class="nav-link" href="stats.html">The Team stats</a></li>
-          <li class="nav-item"><a class="nav-link active" href="tasks.html">Tasks</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
 
   <main class="container my-5">
     <h2 class="text-secondary text-center mb-4">Tasks</h2>
@@ -63,7 +27,13 @@
               <option value="Vote Player of the Month">Vote Player of the Month</option>
               <option value="Share Game-Day Photo">Share Game-Day Photo</option>
               <option value="Submit Q&A Question">Submit Q&A Question</option>
+              <option value="Other">Other (Write your own)</option>
             </select>
+          </div>
+
+          <div class="mb-3" id="customTaskDiv" style="display: none;">
+            <label for="customTaskName" class="form-label">Enter Your Custom Task</label>
+            <input type="text" class="form-control" id="customTaskName" placeholder="Type your task here">
           </div>
 
           <div class="mb-3">
@@ -77,10 +47,8 @@
             ></textarea>
           </div>
 
-          <div class="mb-3">
-            <label for="dueDate" class="form-label">
-              Due Date <small class="text-muted">(Optional)</small>
-            </label>
+          <div class="mb-3" id="dueDateDiv" style="display: none;">
+            <label for="dueDate" class="form-label">Due Date</label>
             <input
               type="date"
               class="form-control"
@@ -170,13 +138,7 @@
     </div>
   </main>
 
-  <footer class="bg-dark text-white text-center py-3">
-    <p class="m-0">&copy; 2024 NTUA Diesels. All rights reserved.</p>
-  </footer>
 
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-  ></script>
 
 </body>
 </html>

@@ -1,54 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Stats - NTUA Diesels</title>
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-  />
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="js/stats.js" defer></script>
-</head>
-<body>
-  <header class="bg-light text-center p-3">
-    <div class="logo">
-      <img
-        src="images/ntua-diesels.png"
-        alt="NTUA Diesels Logo"
-        class="img-fluid mx-auto d-block"
-        style="max-width: 100px;"
-      />
-    </div>
-    <h1 class="text-primary my-2">NTUA DIESELS</h1>
-    <button id="darkModeToggle" class="btn btn-secondary mt-2">Dark Mode</button>
-  </header>
-
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">NTUA Diesels</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNav"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-            <li class="nav-item"><a class="nav-link" href="about.html">The Team</a></li>
-            <li class="nav-item"><a class="nav-link active" href="stats.html">The Team stats</a></li>
-            <li class="nav-item"><a class="nav-link" href="tasks.html">Tasks</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>stats - NTUA Diesels</title>
+  <script src="js/template.js" defer></script>
+  <link rel="stylesheet" href="css/styles.css"></head>
+<body class="loading">
   <main class="container my-5">
     <h2 class="text-secondary text-center mb-4">Season Stats</h2>
 
@@ -70,55 +28,197 @@
           </thead>
           <tbody id="statsTable">
             <tr>
-              <td>Giannis Christos</td>
-              <td>8</td>
-              <td>11.2</td>
-              <td>13.8</td>
-              <td>7.5</td>
-              <td>3.1</td>
-              <td>0.6</td>
-              <td>1.2</td>
-            </tr>
-            <tr>
-              <td>Angelos Papadakis</td>
-              <td>8</td>
-              <td>3.4</td>
-              <td>12.3</td>
-              <td>5.6</td>
-              <td>4.0</td>
-              <td>0.4</td>
-              <td>1.5</td>
-            </tr>
-            <tr>
-              <td>Nikos Kotsopoulos</td>
-              <td>7</td>
-              <td>23</td>
-              <td>10.7</td>
-              <td>5.0</td>
-              <td>5.7</td>
-              <td>0.2</td>
-              <td>0.9</td>
-            </tr>
-            <tr>
-              <td>Vasilis Gekas</td>
-              <td>8</td>
-              <td>8.8</td>
-              <td>11.5</td>
-              <td>6.5</td>
-              <td>2.0</td>
-              <td>0.3</td>
-              <td>0.8</td>
-            </tr>
-            <tr>
-              <td>Tasos Michael</td>
-              <td>6</td>
-              <td>9</td>
-              <td>8.3</td>
-              <td>3.2</td>
-              <td>1.7</td>
-              <td>0.0</td>
-              <td>0.6</td>
-            </tr>
+              <tr>
+                <tr>
+                  <td>Chrysovalantis Alafakis</td>
+                  <td>10</td>
+                  <td>3.5</td>
+                  <td>6.7</td>
+                  <td>2.9</td>
+                  <td>1.7</td>
+                  <td>0.5</td>
+                  <td>0.0</td>
+                </tr>
+                <tr>
+                  <td>Panagis Antzoulatos</td>
+                  <td>14</td>
+                  <td>8.9</td>
+                  <td>7.3</td>
+                  <td>4.3</td>
+                  <td>2.4</td>
+                  <td>1.9</td>
+                  <td>0.1</td>
+                </tr>
+                <tr>
+                  <td>Konstantinos Verouchis</td>
+                  <td>11</td>
+                  <td>3.7</td>
+                  <td>4.8</td>
+                  <td>1.3</td>
+                  <td>0.6</td>
+                  <td>0.5</td>
+                  <td>0.2</td>
+                </tr>
+                <tr>
+                  <td>Sotirios Vrettos</td>
+                  <td>15</td>
+                  <td>2.3</td>
+                  <td>1.7</td>
+                  <td>3.2</td>
+                  <td>0.3</td>
+                  <td>0.4</td>
+                  <td>0.1</td>
+                </tr>
+                <tr>
+                  <td>Panagiotis Damaskos</td>
+                  <td>14</td>
+                  <td>12.4</td>
+                  <td>8.1</td>
+                  <td>12.7</td>
+                  <td>1.3</td>
+                  <td>0.9</td>
+                  <td>1.0</td>
+                </tr>
+                <tr>
+                  <td>Ioannis Zotalis</td>
+                  <td>16</td>
+                  <td>6.7</td>
+                  <td>9.8</td>
+                  <td>3.6</td>
+                  <td>1.1</td>
+                  <td>0.9</td>
+                  <td>0.1</td>
+                </tr>
+                <tr>
+                  <td>Vasileios Ioannou</td>
+                  <td>6</td>
+                  <td>8.5</td>
+                  <td>7.0</td>
+                  <td>5.7</td>
+                  <td>1.2</td>
+                  <td>1.8</td>
+                  <td>0.2</td>
+                </tr>
+                <tr>
+                  <td>Alexandros Karaféras</td>
+                  <td>7</td>
+                  <td>0.6</td>
+                  <td>1.0</td>
+                  <td>1.0</td>
+                  <td>0.7</td>
+                  <td>0.6</td>
+                  <td>0.0</td>
+                </tr>
+                <tr>
+                  <td>Adamantios Limperiou</td>
+                  <td>13</td>
+                  <td>5.2</td>
+                  <td>6.2</td>
+                  <td>5.0</td>
+                  <td>1.1</td>
+                  <td>0.8</td>
+                  <td>0.4</td>
+                </tr>
+                <tr>
+                  <td>Angelos Michalopoulos</td>
+                  <td>13</td>
+                  <td>0.0</td>
+                  <td>0.5</td>
+                  <td>1.0</td>
+                  <td>0.2</td>
+                  <td>0.2</td>
+                  <td>0.0</td>
+                </tr>
+                <tr>
+                  <td>Timoleon Mougnai</td>
+                  <td>7</td>
+                  <td>3.6</td>
+                  <td>2.7</td>
+                  <td>3.4</td>
+                  <td>0.3</td>
+                  <td>0.6</td>
+                  <td>0.1</td>
+                </tr>
+                <tr>
+                  <td>Alexandros Mougnai</td>
+                  <td>3</td>
+                  <td>6.3</td>
+                  <td>6.7</td>
+                  <td>6.0</td>
+                  <td>1.7</td>
+                  <td>0.7</td>
+                  <td>1.0</td>
+                </tr>
+                <tr>
+                  <td>Epameinondas Bekris</td>
+                  <td>14</td>
+                  <td>3.4</td>
+                  <td>1.7</td>
+                  <td>4.2</td>
+                  <td>2.2</td>
+                  <td>1.1</td>
+                  <td>0.1</td>
+                </tr>
+                <tr>
+                  <td>Ioannis Sifakis</td>
+                  <td>9</td>
+                  <td>6.6</td>
+                  <td>7.8</td>
+                  <td>3.3</td>
+                  <td>2.0</td>
+                  <td>3.0</td>
+                  <td>0.3</td>
+                </tr>
+                <tr>
+                  <td>Elias Triantafyllou</td>
+                  <td>6</td>
+                  <td>2.0</td>
+                  <td>3.7</td>
+                  <td>1.7</td>
+                  <td>0.5</td>
+                  <td>0.5</td>
+                  <td>0.0</td>
+                </tr>
+                <tr>
+                  <td>Nikolaos Hatzopoulos</td>
+                  <td>13</td>
+                  <td>1.9</td>
+                  <td>0.6</td>
+                  <td>3.4</td>
+                  <td>0.2</td>
+                  <td>0.3</td>
+                  <td>0.0</td>
+                </tr>
+                <tr>
+                  <td>Nikolaos Zorbas</td>
+                  <td>5</td>
+                  <td>-1.0</td>
+                  <td>0.4</td>
+                  <td>1.6</td>
+                  <td>0.2</td>
+                  <td>0.0</td>
+                  <td>0.0</td>
+                </tr>
+                <tr>
+                  <td>Dimitrios Dagres</td>
+                  <td>0</td>
+                  <td>0.0</td>
+                  <td>0.0</td>
+                  <td>0.0</td>
+                  <td>0.0</td>
+                  <td>0.0</td>
+                  <td>0.0</td>
+                </tr>
+                <tr>
+                  <td>Georgios Bekris</td>
+                  <td>10</td>
+                  <td>19.0</td>
+                  <td>14.6</td>
+                  <td>10.4</td>
+                  <td>1.6</td>
+                  <td>2.6</td>
+                  <td>0.8</td>
+                </tr>                          
           </tbody>
         </table>
       </div>
@@ -147,12 +247,6 @@
       </div>
     </div>
   </main>
-
-  <footer class="bg-dark text-white text-center py-3 mt-5">
-    <p class="m-0">&copy; 2024 NTUA Diesels. All rights reserved.</p>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>

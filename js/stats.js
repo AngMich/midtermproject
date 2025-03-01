@@ -39,7 +39,6 @@ $(document).ready(function () {
         $('#statsTable').append(row);
       });
   
-      // Toggle ascending/descending class
       $('.sortable').removeClass('asc desc');
       $(this).addClass(isAscending ? 'desc' : 'asc');
     });

@@ -1,0 +1,35 @@
+/* loading.css */
+body {
+  transition: opacity 0.1s ease;
+  opacity: 1; 
+}
+body.loading {
+  opacity: 0;
+}
+
+/* Default Light Mode */
+body {
+    background-color: white;
+    color: black;
+  }
+  
+  /* Dark Mode Styling */
+  body.dark-mode {
+    background-color: #121212;
+    color: white;
+  }
+  
+  header.dark-mode, footer.dark-mode, nav.dark-mode {
+    background-color: #333 !important;
+    color: white !important;
+  }
+  
+  .navbar.dark-mode .nav-link {
+    color: white !important;
+  }
+  
+  .navbar.dark-mode .nav-link.active {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  
