@@ -1,7 +1,7 @@
 $(document).ready(function () {
   let tasks = [];
 
-  function updateTaskCounters() {
+  function updateTaskCounters() {//function that updates the counter of the tasks
     const totalTasks = tasks.length;
     const pendingTasks = tasks.filter(task => task.status === 'Pending').length;
     const completedTasks = tasks.filter(task => task.status === 'Completed').length;
@@ -11,7 +11,7 @@ $(document).ready(function () {
     $('#completedTasks').text(completedTasks);
   }
 
-  function renderTasks(filteredTasks = tasks) {
+  function renderTasks(filteredTasks = tasks) {//this function filters the task table
     const taskList = $('#taskList');
     taskList.empty();
 
@@ -35,7 +35,7 @@ $(document).ready(function () {
     updateTaskCounters();
   }
 
-  $('#taskName').change(function () {
+  $('#taskName').change(function () {//if statments for handeling the other and ticket taks
       if ($(this).val() === 'Other') {
         $('#customTaskDiv').show();
         $('#customTaskName').prop('required', true);
@@ -54,7 +54,7 @@ $(document).ready(function () {
       }
   });
 
-  $('#taskForm').submit(function (e) {
+  $('#taskForm').submit(function (e) {//submits the task
     e.preventDefault();
 
     const taskName = $('#taskName').val();
@@ -76,19 +76,19 @@ $(document).ready(function () {
     this.reset();
   });
 
-  $('#taskList').on('click', '.complete-task', function () {
+  $('#taskList').on('click', '.complete-task', function () {//button to make a task complete 
     const taskIndex = $(this).closest('tr').data('index');
     tasks[taskIndex].status = 'Completed';
     renderTasks();
   });
 
-  $('#taskList').on('click', '.delete-task', function () {
+  $('#taskList').on('click', '.delete-task', function () {//button to delete a task
     const taskIndex = $(this).closest('tr').data('index');
     tasks.splice(taskIndex, 1);
     renderTasks();
   });
 
-  $('#filterStatus').change(function () {
+  $('#filterStatus').change(function () {//filters the task by status
     const filter = $(this).val();
 
     if (filter === 'all') {
@@ -99,7 +99,7 @@ $(document).ready(function () {
     }
   });
 
-  $('#sortTasks').change(function () {
+  $('#sortTasks').change(function () {//sorts by and or due date
     const sortBy = $(this).val();
 
     const sortedTasks = [...tasks];

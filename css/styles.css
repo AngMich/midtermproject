@@ -1,4 +1,19 @@
-/* loading.css */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1; 
+}
+
 body {
   transition: opacity 0.05s ease;
   opacity: 1; 
@@ -7,13 +22,11 @@ body.loading {
   opacity: 0;
 }
 
-/* Default Light Mode */
 body {
     background-color: white;
     color: black;
   }
   
-  /* Dark Mode Styling */
   body.dark-mode {
     background-color: #121212;
     color: white;
